@@ -5,6 +5,9 @@ import java.util.List;
 
 public abstract class Letter {
 	
+	public static final String SPACE = "[ ]";
+	public static final String NON_SPACE = "[*]";
+	
 	private int size;
 	
 	public Letter() {

@@ -18,18 +18,22 @@ public class X extends Letter{
 		for (int yCoor = 0, i = 0, h = size-1 ; yCoor<size; yCoor++) {
             for (int xCoor = 0; xCoor < size; xCoor++) {
                 if (xCoor==i){
-                	array[xCoor][yCoor] = "[*]";
+                	array[xCoor][yCoor] = NON_SPACE;
                 } else if (h==xCoor) {
-                	array[xCoor][yCoor] = "[*]";
+                	array[xCoor][yCoor] = NON_SPACE;
                 }
                 else {
-                	array[xCoor][yCoor] = "[ ]";
+                	array[xCoor][yCoor] = SPACE;
                 }
             }          
-            System.out.println();
             i++;
             h--;
         }
+		
+//		String[][] array = {{NON_SPACE,SPACE,NON_SPACE},
+//				{SPACE,NON_SPACE,SPACE},
+//				{NON_SPACE,SPACE,NON_SPACE}};
+		
 		
 		return array;
 	}

@@ -30,9 +30,9 @@ public class LetterTest {
 		int size = 3;
 		Letter l = new X(size);
 		String[][] letterArray = l.generateLetter();
-		String[][] expectedArray = {{"*","","*"},
-										{"","*","*"},
-										{"*","","*"}};
+		String[][] expectedArray = {{Letter.NON_SPACE,Letter.SPACE,Letter.NON_SPACE},
+										{Letter.SPACE,Letter.NON_SPACE,Letter.SPACE},
+										{Letter.NON_SPACE,Letter.SPACE,Letter.NON_SPACE}};
 		
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
