@@ -30,11 +30,6 @@ public class X extends Letter{
             h--;
         }
 		
-//		String[][] array = {{NON_SPACE,SPACE,NON_SPACE},
-//				{SPACE,NON_SPACE,SPACE},
-//				{NON_SPACE,SPACE,NON_SPACE}};
-		
-		
 		return array;
 	}
 
