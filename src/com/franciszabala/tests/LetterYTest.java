@@ -36,5 +36,45 @@ public class LetterYTest {
 			}
 		}
 	}
+	
+	@Test
+	public void testLetterYSize5() {
+		
+		int size = 5;
+		Letter l = new Y(size);
+		String[][] letterArray = l.generateLetter();
+		String[][] expectedArray = {{Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE},
+									{Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE},
+									{Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE},
+										{Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE},
+										{Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE}};
+		
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				assertEquals(expectedArray[i][j], letterArray[i][j]);
+			}
+		}
+	}
+	
+	@Test
+	public void testLetterYSize7() {
+		
+		int size = 7;
+		Letter l = new Y(size);
+		String[][] letterArray = l.generateLetter();
+		String[][] expectedArray = {{Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE},
+									{Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE},
+									{Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE},
+									{Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE},
+									{Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE},
+									{Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE},
+									{Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE}};
+		
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				assertEquals(expectedArray[i][j], letterArray[i][j]);
+			}
+		}
+	}
 
 }
