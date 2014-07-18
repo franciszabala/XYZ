@@ -1,8 +1,5 @@
 package com.franciszabala.letters;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Letter {
 	
 	public static final String SPACE = "[ ]";
