@@ -10,7 +10,9 @@ public abstract class LetterMerger {
 	private List<Letter> listOfLetters = new ArrayList<Letter>();
 	private String[][] mergedResult;
 
-	public void addArrayToMerge(Letter letter) {
+	protected abstract String[][] mergeLetters();
+	
+	public void addLetterToMerge(Letter letter) {
 		// TODO Auto-generated method stub
 		getListOfLetters().add(letter);
 		
@@ -23,23 +25,22 @@ public abstract class LetterMerger {
 
 	public String[][] getMergedResult() {
 		// TODO Auto-generated method stub
+		mergedResult = mergeLetters();
 		return mergedResult;
 	}
 	
-	public abstract String[][] mergeLetters();
 
 	protected List<Letter> getListOfLetters() {
-		return listOfLetters;
+		return (List<Letter>) listOfLetters;
 	}
 
 	protected void setListOfLetters(List<Letter> listOfLetters) {
 		this.listOfLetters = listOfLetters;
 	}
 	
-	
-	
-	
+	protected Letter getFirstItemOnListOfLetters() {
+		return ((List<Letter>) listOfLetters).get(0);
+	}
 
-	
 
 }

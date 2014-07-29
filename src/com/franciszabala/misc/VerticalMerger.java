@@ -3,7 +3,7 @@ package com.franciszabala.misc;
 import com.franciszabala.letters.Letter;
 
 
-public class HorizontalMerger extends LetterMerger {
+public class VerticalMerger extends LetterMerger {
 
 
 	@Override
@@ -11,7 +11,7 @@ public class HorizontalMerger extends LetterMerger {
 		// TODO Auto-generated method stub
 		
 		String[][] mergedLetters;
-		String[][] generatedLetter;
+		String[][] lettersPlaceholder;
 		
 		Letter letterTemp = getFirstItemOnListOfLetters();
 		//size or dimension of the letter
@@ -19,29 +19,25 @@ public class HorizontalMerger extends LetterMerger {
 		//the size when all the letters are merged horizontally
 		int mergeLetterSize = letterSize * getListOfLetters().size();
 		
-		mergedLetters = new String[letterSize][mergeLetterSize];
+		mergedLetters = new String[mergeLetterSize][letterSize];
 		
 		//temp storage for a letter on the list
-		generatedLetter = new String[letterSize][letterSize];
-		
-		for (int y = 0; y < letterTemp.getSize(); y++) {
-			java.util.Arrays.fill(mergedLetters[y],"[]");
-		}
-
+		lettersPlaceholder = new String[letterSize][letterSize];
 		
 		//loop through each letter
 		for (int i = 0; i < getListOfLetters().size(); i++) {
 			//put something here
-			letterTemp = getListOfLetters().get(i);
-			Class<? extends Letter> c = getListOfLetters().get(i).getClass();
-			System.out.println(c.getName());
+		
 			//initialize
+			for (int y = 0; y < letterTemp.getSize(); y++) {
+				java.util.Arrays.fill(mergedLetters[y],"[]");
+			}
 
-			generatedLetter = letterTemp.getGeneratedLetter();
+			lettersPlaceholder = letterTemp.getGeneratedLetter();
 			
 			for (int y = 0; y < letterTemp.getSize(); y++) {
 				for (int x = 0; x < letterTemp.getSize(); x++) {
-					mergedLetters[y][x+ (i*letterSize)] = generatedLetter[y][x];
+					mergedLetters[y][x] = lettersPlaceholder[y][x];
 				}
 			}
 			

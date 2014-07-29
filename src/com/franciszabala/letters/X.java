@@ -5,11 +5,11 @@ public class X extends Letter{
 	
 	public X(int size) {
 		// TODO Auto-generated constructor stub
-		super.setSize(size);
+		super(size);
 	}
 
 	@Override
-	public String[][] generateLetter() {
+	public void generateLetter() {
 		// TODO Auto-generated method stub
 		//String[][] array = new String[super.size][super.size];
 		int size = super.getSize();
@@ -29,8 +29,7 @@ public class X extends Letter{
             i++;
             h--;
         }
-		
-		return array;
+		setGeneratedLetter(array);
 	}
 
 }

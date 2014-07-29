@@ -13,7 +13,7 @@ public class LetterZTest {
 	public void testLetterZInit() {
 		int size = 3;
 		Letter l = new Z(size);
-		String[][] letterArray = l.generateLetter();
+		String[][] letterArray = l.getGeneratedLetter();
 		//expected vs reality
 		assertEquals(size,letterArray.length);
 		assertEquals(size,letterArray[0].length);
@@ -24,7 +24,7 @@ public class LetterZTest {
 		
 		int size = 3;
 		Letter l = new Z(size);
-		String[][] letterArray = l.generateLetter();
+		String[][] letterArray = l.getGeneratedLetter();
 		String[][] expectedArray = {{Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE},
 										{Letter.SPACE,Letter.NON_SPACE,Letter.SPACE},
 										{Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE}};
@@ -41,7 +41,7 @@ public class LetterZTest {
 		
 		int size = 5;
 		Letter l = new Z(size);
-		String[][] letterArray = l.generateLetter();
+		String[][] letterArray = l.getGeneratedLetter();
 		String[][] expectedArray = {{Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE},
 									{Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE},
 									{Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE},
@@ -60,7 +60,7 @@ public class LetterZTest {
 		
 		int size = 7;
 		Letter l = new Z(size);
-		String[][] letterArray = l.generateLetter();
+		String[][] letterArray = l.getGeneratedLetter();
 		String[][] expectedArray = {{Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE},
 									{Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE},
 									{Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE},

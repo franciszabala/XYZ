@@ -43,14 +43,14 @@ public class HorizontalLetterMergerTest {
 	@Test
 	public void testMergeCount() {
 		LetterMerger arrayMerger = new HorizontalMerger();
-		arrayMerger.addArrayToMerge(x);
+		arrayMerger.addLetterToMerge(x);
 		assertEquals(1, arrayMerger.getMergedCount());
 
-		arrayMerger.addArrayToMerge(y);
+		arrayMerger.addLetterToMerge(y);
 		assertEquals(2, arrayMerger.getMergedCount());
 		
 		
-		arrayMerger.addArrayToMerge(z);
+		arrayMerger.addLetterToMerge(z);
 		assertEquals(3, arrayMerger.getMergedCount());
 	}
 
@@ -58,19 +58,38 @@ public class HorizontalLetterMergerTest {
 	@Test
 	public void testMerge() {
 		LetterMerger arrayMerger = new HorizontalMerger();
-	
-		arrayMerger.addArrayToMerge(x);
-		arrayMerger.addArrayToMerge(y);
-		arrayMerger.addArrayToMerge(z);
 		
+		arrayMerger.addLetterToMerge(x);
+		//x.toString();
+		arrayMerger.addLetterToMerge(y);
+		//y.toString();
+		arrayMerger.addLetterToMerge(z);
+		//z.toString();
+
 		String[][] arrayResult = arrayMerger.getMergedResult();
+		int letterCount = x.getSize() + y.getSize() + z.getSize(); 
+
+		String[][] expectedArray = {{Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE},
+				{Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE},
+				{Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE},
+				{Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE},
+				{Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.SPACE,Letter.SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE,Letter.NON_SPACE}};
 		
-		assertEquals(x.getSize(), arrayResult[0].length);
+		assertEquals(letterCount, arrayResult[0].length);
+		
+		//System.out.println("roflcopter: " +expectedArray.length);
+		
+		for (int y = 0; y < expectedArray.length; y++) {
+			for (int x = 0; x < expectedArray[y].length; x++) {
+				//System.out.print(expectedArray[y][x]);
+				assertEquals(expectedArray[y][x], arrayResult[y][x]);
+				
+			}
+			//System.out.println();
+		}
 		
 		
-		
-		
-		
+
 		
 	}
 
