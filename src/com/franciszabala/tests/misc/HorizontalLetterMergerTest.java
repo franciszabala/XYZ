@@ -77,20 +77,12 @@ public class HorizontalLetterMergerTest {
 		
 		assertEquals(letterCount, arrayResult[0].length);
 		
-		//System.out.println("roflcopter: " +expectedArray.length);
-		
-		for (int y = 0; y < expectedArray.length; y++) {
-			for (int x = 0; x < expectedArray[y].length; x++) {
-				//System.out.print(expectedArray[y][x]);
-				assertEquals(expectedArray[y][x], arrayResult[y][x]);
-				
+		for (int row = 0; row < expectedArray.length; row++) {
+			for (int column = 0; column < expectedArray[row].length; column++) {
+				assertEquals(expectedArray[row][column], arrayResult[row][column]);
 			}
-			//System.out.println();
 		}
-		
-		
 
-		
 	}
 
 }

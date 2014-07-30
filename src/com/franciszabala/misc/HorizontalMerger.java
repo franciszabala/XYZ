@@ -27,35 +27,22 @@ public class HorizontalMerger extends LetterMerger {
 		for (int y = 0; y < letterTemp.getSize(); y++) {
 			java.util.Arrays.fill(mergedLetters[y],"[]");
 		}
-
 		
 		//loop through each letter
 		for (int i = 0; i < getListOfLetters().size(); i++) {
 			//put something here
 			letterTemp = getListOfLetters().get(i);
-			Class<? extends Letter> c = getListOfLetters().get(i).getClass();
-			System.out.println(c.getName());
+			//Class<? extends Letter> c = getListOfLetters().get(i).getClass();
+			//System.out.println(c.getName());
 			//initialize
-
 			generatedLetter = letterTemp.getGeneratedLetter();
-			
 			for (int y = 0; y < letterTemp.getSize(); y++) {
 				for (int x = 0; x < letterTemp.getSize(); x++) {
 					mergedLetters[y][x+ (i*letterSize)] = generatedLetter[y][x];
 				}
 			}
-			
-			//System.out.println(letterPlaceHolder);
-			
-			//for 
-			
 		}
-	
-//		for (int y = 0; y < expectedArray.length; y++) {
-//			for (int x = 0; x < expectedArray[y].length; x++) {
-//				//System.out.print(expectedArray[y][x]);
-		
-		
+
 		for (int y = 0; y < mergedLetters.length; y++) {
 			for (int x = 0; x < mergedLetters[y].length; x++) {
 				System.out.print(mergedLetters[y][x]);

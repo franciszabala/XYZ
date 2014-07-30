@@ -13,22 +13,17 @@ public abstract class LetterMerger {
 	protected abstract String[][] mergeLetters();
 	
 	public void addLetterToMerge(Letter letter) {
-		// TODO Auto-generated method stub
 		getListOfLetters().add(letter);
-		
 	}
 
 	public int getMergedCount() {
-		// TODO Auto-generated method stub
 		return getListOfLetters().size();
 	}
 
 	public String[][] getMergedResult() {
-		// TODO Auto-generated method stub
 		mergedResult = mergeLetters();
 		return mergedResult;
 	}
-	
 
 	protected List<Letter> getListOfLetters() {
 		return (List<Letter>) listOfLetters;

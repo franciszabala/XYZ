@@ -11,7 +11,7 @@ public class VerticalMerger extends LetterMerger {
 		// TODO Auto-generated method stub
 		
 		String[][] mergedLetters;
-		String[][] lettersPlaceholder;
+		String[][] generatedLetter;
 		
 		Letter letterTemp = getFirstItemOnListOfLetters();
 		//size or dimension of the letter
@@ -22,39 +22,33 @@ public class VerticalMerger extends LetterMerger {
 		mergedLetters = new String[mergeLetterSize][letterSize];
 		
 		//temp storage for a letter on the list
-		lettersPlaceholder = new String[letterSize][letterSize];
+		generatedLetter = new String[letterSize][letterSize];
+		
+		for (int row = 0; row < letterTemp.getSize(); row++) {
+			java.util.Arrays.fill(mergedLetters[row],"[]");
+		}
 		
 		//loop through each letter
 		for (int i = 0; i < getListOfLetters().size(); i++) {
 			//put something here
 		
 			//initialize
-			for (int y = 0; y < letterTemp.getSize(); y++) {
-				java.util.Arrays.fill(mergedLetters[y],"[]");
-			}
+			letterTemp = getListOfLetters().get(i);
 
-			lettersPlaceholder = letterTemp.getGeneratedLetter();
+			generatedLetter = letterTemp.getGeneratedLetter();
 			
-			for (int y = 0; y < letterTemp.getSize(); y++) {
-				for (int x = 0; x < letterTemp.getSize(); x++) {
-					mergedLetters[y][x] = lettersPlaceholder[y][x];
+			for (int row = 0; row < letterTemp.getSize(); row++) {
+				for (int column = 0; column < letterTemp.getSize(); column++) {
+					mergedLetters[row + (i*letterSize)][column] = generatedLetter[row][column];
 				}
 			}
 			
-			//System.out.println(letterPlaceHolder);
-			
-			//for 
-			
 		}
-	
-//		for (int y = 0; y < expectedArray.length; y++) {
-//			for (int x = 0; x < expectedArray[y].length; x++) {
-//				//System.out.print(expectedArray[y][x]);
+
 		
-		
-		for (int y = 0; y < mergedLetters.length; y++) {
-			for (int x = 0; x < mergedLetters[y].length; x++) {
-				System.out.print(mergedLetters[y][x]);
+		for (int row = 0; row < mergedLetters.length; row++) {
+			for (int column = 0; column < mergedLetters[row].length; column++) {
+				System.out.print(mergedLetters[row][column]);
 			}
 			System.out.println();
 		}
